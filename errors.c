@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * errfunction - Prints appropiate error messages determined by their error code.
+ * errfunction - appropiate error messages determined by their error code.
  * @error_code: The error codes are the following:
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.
@@ -11,7 +11,7 @@
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
  * (8) => When stack is too short for operation.
- */
+*/
 void errfunction(int error_code, ...)
 {
 	va_list ag;
@@ -37,7 +37,7 @@ void errfunction(int error_code, ...)
 			fprintf(stderr, "Error: malloc failed\n");
 			break;
 		case 5:
-			fprintf(stderr, "L%d: usage: push integer\n", va_arg(ag, int));
+		fprintf(stderr, "L%d: usage: push integer\n", va_arg(ag, int));
 			break;
 		default:
 			break;
@@ -74,7 +74,7 @@ void more_errors(int error_code, ...)
 		case 8:
 			l_num = va_arg(ag, unsigned int);
 			op = va_arg(ag, char *);
-			fprintf(stderr, "L%d: can't %s, stack too short\n", l_num, op);
+	fprintf(stderr, "L%d: can't %s, stack too short\n", l_num, op);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
@@ -103,10 +103,10 @@ void string_err(int error_code, ...)
 	switch (error_code)
 	{
 		case 10:
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
+	fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
 			break;
 		case 11:
-			fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);
 			break;
 		default:
 			break;
